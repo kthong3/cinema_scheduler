@@ -8,4 +8,5 @@
 
 Cinema.destroy_all
 
-cinema = Cinema.create(name: "Westeros Theatre", address: "King's Landing", phone_number: "1-234-567-8910")
+Cinema.create(name: "Stark Theatre", address: "7 Winterfell Rd.", phone_number: "1-234-567-8910")
+Cinema.create(name: "Friends Theatre", address: "236 Central Perk Plaza", phone_number: "1-098-765-4321")
