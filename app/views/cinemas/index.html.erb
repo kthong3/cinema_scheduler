@@ -1,1 +1,7 @@
 This is the main page!
+
+<% @cinemas.each do |cinema| %>
+  <p>Cinema: <%= cinema.name %></p>
+  <p>Address: <%= cinema.address %></p>
+  <p>Phone Number: <%= cinema.phone_number %></p>
+<% end %>

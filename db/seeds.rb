@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Cinema.destroy_all
+
+cinema = Cinema.create(name: "Westeros Theatre", address: "King's Landing", phone_number: "1-234-567-8910")
