@@ -1,18 +1,17 @@
 class FilmsController < ApplicationController
   def index
-    @cinema = Cinema.find(params[:cinema_id])
-    @films = @cinema.films
+    @films = Film.all
   end
 
   def new
+    @film = Film.new
   end
 
   def create
   end
 
   def show
-    @cinema = Cinema.find(params[:cinema_id])
-    @film = @cinema.films.find(params[:id])
+    @film = Film.find(params[:id])
   end
 
   def update
@@ -23,6 +22,6 @@ class FilmsController < ApplicationController
 
   private
   def films_params
-    params.require(:film).permit(:title, :length, :release_date, :rating, :cinema_id)
+    params.require(:film).permit(:title, :length, :release_date, :rating)
   end
 end
