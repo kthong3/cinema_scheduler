@@ -5,7 +5,6 @@ class CreateFilms < ActiveRecord::Migration[5.1]
       t.integer :length
       t.datetime :release_date
       t.string :rating
-      t.references :cinema, foreign_key: true
 
       t.timestamps
     end

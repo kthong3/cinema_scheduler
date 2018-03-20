@@ -28,21 +28,21 @@ ActiveRecord::Schema.define(version: 20180320035240) do
     t.integer "length"
     t.datetime "release_date"
     t.string "rating"
-    t.bigint "cinema_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cinema_id"], name: "index_films_on_cinema_id"
   end
 
   create_table "screenings", force: :cascade do |t|
     t.datetime "start_time"
     t.datetime "end_time"
+    t.bigint "cinema_id"
     t.bigint "film_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cinema_id"], name: "index_screenings_on_cinema_id"
     t.index ["film_id"], name: "index_screenings_on_film_id"
   end
 
-  add_foreign_key "films", "cinemas"
+  add_foreign_key "screenings", "cinemas"
   add_foreign_key "screenings", "films"
 end
