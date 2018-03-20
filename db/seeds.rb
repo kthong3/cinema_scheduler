@@ -11,4 +11,31 @@ Film.destroy_all
 
 Cinema.create(name: "Stark Theatre", address: "7 Winterfell Rd.", phone_number: "1-234-567-8910")
 Cinema.create(name: "Friends Theatre", address: "236 Central Perk Plaza", phone_number: "1-098-765-4321")
-Film.create(title: "Liar Liar", length: 86, release_date: "1997-03-21", rating: "PG-13", cinema_id: 1)
+
+films = Film.create([
+  { title: "Liar Liar",
+    length: 86,
+    release_date: "1997-03-21",
+    rating: "PG-13",
+    cinema_id: 1 },
+  { title: "The Imitation Game",
+    length: 114,
+    release_date: "2014-01-07",
+    rating: "PG-13",
+    cinema_id: 1 }
+  ])
+
+screenings = Screening.create([
+  { start_time: Time.now,
+    end_time: Time.now + Film.first.length.minutes,
+    film_id: 1 },
+  { start_time: Time.now,
+    end_time: Time.now + 114.minutes,
+    film_id: 2 },
+  { start_time: "02:20:00",
+    end_time: "04:00:00",
+    film_id: 1 },
+  { start_time: "02:30:00",
+    end_time: "05:00:00",
+    film_id: 2 }
+  ])
