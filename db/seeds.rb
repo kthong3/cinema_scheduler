@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Cinema.destroy_all
+Film.destroy_all
 
 Cinema.create(name: "Stark Theatre", address: "7 Winterfell Rd.", phone_number: "1-234-567-8910")
 Cinema.create(name: "Friends Theatre", address: "236 Central Perk Plaza", phone_number: "1-098-765-4321")
+Film.create(title: "Liar Liar", length: 86, release_date: "1997-03-21", rating: "PG-13", cinema_id: 1)
