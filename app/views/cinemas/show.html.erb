@@ -1,0 +1,4 @@
+<%= render partial: "cinema", object: @cinema %>
+<% @cinema_schedules.each do |schedule| %>
+  <p><%= schedule.day %>, <%= schedule.open.strftime("%I:%M %p") %> - <%= schedule.close.strftime("%I:%M %p") %></p>
+<% end %>

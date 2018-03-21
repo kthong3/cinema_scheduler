@@ -61,7 +61,7 @@ schedules = Schedule.create([
     close: "21:00",
     cinema_id: 1 },
   { day: "Friday",
-    open: "11:00",
+    open: "10:30",
     close: "21:59:59",
     cinema_id: 1 },
   { day: "Saturday",
