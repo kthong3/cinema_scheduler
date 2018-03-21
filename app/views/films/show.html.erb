@@ -3,4 +3,5 @@
   <p>Rated <%= @film.rating %></p>
   <p>Length: <%= @film.length %> minutes</p>
   <p>Release Date: <%= @film.release_date %></p>
+  <p><%= link_to 'Film Screenings', film_screenings_path(@film) %></p>
 </div>
