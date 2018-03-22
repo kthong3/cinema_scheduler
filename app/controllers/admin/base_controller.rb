@@ -1,4 +1,5 @@
 class Admin::BaseController < ActionController::Base
+  include ApplicationHelper
   # use an admin-specific layout instead of the main application layout
   # layout "admin"
 
