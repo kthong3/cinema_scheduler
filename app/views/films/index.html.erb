@@ -1,7 +1,12 @@
 <div class="container">
-  <div class="admin-feature">
+  <div class="header">
     <% if current_user && current_user.is_admin? %>
-      <p><%= link_to "Add New Film", new_admin_film_path %></p>
+      <div class="admin-feature">
+        <h1>Admin Panel</h1>
+        <p><%= link_to "Add New Film", new_admin_film_path %></p>
+      </div>
+    <% else %>
+      <h1>Films</h1>
     <% end %>
   </div>
   <%= render @films %>

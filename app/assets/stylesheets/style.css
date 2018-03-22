@@ -1,0 +1,53 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr 1fr 1fr;
+  }
+
+.header {
+  grid-column: 1/5;
+  text-align: center;
+  border-color: 1px solid blue;
+}
+
+.form-partial {
+  background-color: black;
+
+}
+
+.cinema-partial {
+  margin: 10px;
+  border: 5px solid blue;
+  border-radius: 25px;
+  text-align: center;
+  padding: 5px;
+}
+.film-partial {
+  margin: 10px;
+  border: 5px solid white;
+  border-radius: 25px;
+  text-align: center;
+  padding: 5px;
+}
+.film-container {
+  grid-column: 1/5
+}
+.screening-partial {
+}
+.admin-feature {
+}
+
+h1 {
+  font-family: Georgia;
+  color: white;
+}
+
+body {
+  font-family: Georgia;
+  color: white;
+  background-color: black;
+}
+
+a {
+  color: white;
+}
