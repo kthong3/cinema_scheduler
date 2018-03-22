@@ -6,7 +6,11 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       log_in(@user)
-      redirect_to user_path(@user)
+        if @user.is_admin?
+          redirect_to admin_user_index_path
+        else
+          redirect_to films_path
+        end
     else
       render 'new'
     end

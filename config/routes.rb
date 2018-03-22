@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :films, except: [:index, :show] do
-         resources :screenings, except: [:index, :show]
+    resources :user, only: :index
+    resources :films, except: :show do
+      resources :screenings, except: [:index, :show]
     end
     resources :cinemas, except: [:index, :show]
   end
