@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   root 'films#index'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
-  get 'logout' => 'sessions#destroy'
+  delete 'logout' => 'sessions#destroy'
   # get 'signup' => 'users#new'
 end

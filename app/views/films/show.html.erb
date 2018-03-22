@@ -5,7 +5,7 @@
   <p>Released: <%= @film.release_date %></p>
   <p><%= link_to 'Film Screenings', film_screenings_path(@film) %></p>
 
-  <% if current_user.is_admin? %>
+  <% if current_user && current_user.is_admin? %>
     <p>
       <%= link_to 'Update Film Information', edit_admin_film_path(@film) %>
       | <%= link_to 'Delete Film', admin_film_path(@film), method: :delete, data: { confirm: "Are you sure?"} %>

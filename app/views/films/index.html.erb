@@ -1,5 +1,5 @@
 <div class="container">
-  <% if current_user.is_admin? %>
+  <% if current_user && current_user.is_admin? %>
     <p><%= link_to "Add New Film", new_admin_film_path %></p>
   <% end %>
   <%= render @films %>
