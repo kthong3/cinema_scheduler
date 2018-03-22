@@ -1,0 +1,31 @@
+<%= form_for [:admin, @film] do |f| %>
+  <% if @film.errors.any? %>
+    <div id="errors">
+      <h2><%= pluralize(@film.errors.count, "error") %> prevented this film from saving</h2>
+      <ul>
+        <% @film.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :length %><br>
+    <%= f.text_field :length %>
+  </p>
+  <p>
+    <%= f.label :rating %><br>
+    <%= f.text_field :rating %>
+  </p>
+  <p>
+    <%= f.label :release_date %><br>
+    <%= f.text_field :release_date %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

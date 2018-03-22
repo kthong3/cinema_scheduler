@@ -31,8 +31,8 @@ class Admin::CinemasController < Admin::BaseController
   end
 
   private
-  def cinemas_params
-    params.require(:cinema).permit(:title, :length, :release_date, :rating, :admin_id)
+  def cinema_params
+    params.require(:cinema).permit(:name, :address, :phone_number, :admin_id)
   end
 
   def find_cinema
