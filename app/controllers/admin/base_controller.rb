@@ -3,9 +3,11 @@ class Admin::BaseController < ActionController::Base
   # layout "admin"
 
   # all child controllers will automatically enforce access to admins only
-  # before_action :require_admin
+  before_action :require_admin
 
-  # def require_admin
-
-  # end
+  def require_admin
+    unless current_user.is_admin?
+      redirect_to root_path
+    end
+  end
 end
