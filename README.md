@@ -24,5 +24,15 @@ Must have on your machine:
 - Start the server:  `rails server` or simply `rails s` (hosts local server at `localhost:3000`)
 
 ## Challenges
+- Using Admin namespace.
+  - Aware of Admin Panel gems but I wanted to learn how to manage Admin controllers/views from scratch first
+- Admin can create new cinemas and films but film screenings are not yet showing the correct screen times.
+
+## Next Steps
+- Add Testing
+- Refactor current code and clean up views
+- Improve styling
+- Possible architecture change
+  - Might need to specify day for creating screenings
 - Users can view films without logging in
-- Once logged in, Admin can create new cinemas and films but film screenings are not yet showing the correct screen times.
+  - Implement feature to favorite
