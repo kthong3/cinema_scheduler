@@ -12,6 +12,10 @@
     <p>Rated <%= @film.rating %></p>
     <p>Length: <%= @film.length %> minutes</p>
     <p>Released: <%= @film.release_date %></p>
-    <p><%= link_to 'Film Screenings', film_screenings_path(@film) %></p>
+    <% if @film.screenings.empty? %>
+     <p><%= link_to "Create Screenings", admin_film_screenings_path(@film), method: :post %></p>
+    <% else %>
+      <p><%= link_to 'Film Screenings', film_screenings_path(@film) %></p>
+    <% end %>
   </div>
 </div>

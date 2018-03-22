@@ -1,4 +1,4 @@
 <div class="container">
-  <h1 class="header">Film Screenings</h1>
-  <%= render @screenings %>
+  <h1 class="header">Film Screenings for <%= @film.title %></h1>
+  <%= render @screenings || "There are no screenings yet." %>
 </div>

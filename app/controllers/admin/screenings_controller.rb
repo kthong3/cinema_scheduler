@@ -6,12 +6,12 @@ class Admin::ScreeningsController < Admin::BaseController
   end
 
   def create
-    @screening = Screening.create(screening_params)
-    if @screening.save
-      redirect_to @screening
-    else
-      render 'new'
-    end
+
+    @cinema = Cinema.find(params[:cinema_id])
+    @film = Film.find(params[:film_id])
+    @screenings = generate_wkday_screenings(@cinema, @film)
+
+    redirect_to @film
   end
 
   def edit
