@@ -21,25 +21,6 @@ films = Film.create([
     admin_id: 1 }
   ])
 
-screenings = Screening.create([
-  { start_time: "12:00:00",
-    end_time: "2:00:00",
-    cinema_id: 1,
-    film_id: 1 },
-  { start_time: "12:00:00",
-    end_time: "02:00:00",
-    cinema_id: 1,
-    film_id: 2 },
-  { start_time: "02:20:00",
-    end_time: "04:00:00",
-    cinema_id: 1,
-    film_id: 1 },
-  { start_time: "02:30:00",
-    end_time: "05:00:00",
-    cinema_id: 1,
-    film_id: 2 }
-  ])
-
 schedules = Schedule.create([
   { day: "Monday",
     open: "11:00",

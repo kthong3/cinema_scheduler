@@ -6,8 +6,7 @@ class Admin::ScreeningsController < Admin::BaseController
   end
 
   def create
-
-    @cinema = Cinema.find(params[:cinema_id])
+    @cinema = Cinema.first
     @film = Film.find(params[:film_id])
     @screenings = generate_wkday_screenings(@cinema, @film)
 
