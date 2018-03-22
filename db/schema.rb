@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321162509) do
+ActiveRecord::Schema.define(version: 20180321210445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20180321162509) do
     t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "admin_id"
+    t.index ["admin_id"], name: "index_cinemas_on_admin_id"
   end
 
   create_table "films", force: :cascade do |t|
@@ -30,6 +32,8 @@ ActiveRecord::Schema.define(version: 20180321162509) do
     t.string "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "admin_id"
+    t.index ["admin_id"], name: "index_films_on_admin_id"
   end
 
   create_table "schedules", force: :cascade do |t|
@@ -53,6 +57,17 @@ ActiveRecord::Schema.define(version: 20180321162509) do
     t.index ["film_id"], name: "index_screenings_on_film_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.boolean "is_admin", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "cinemas", "users", column: "admin_id"
+  add_foreign_key "films", "users", column: "admin_id"
   add_foreign_key "schedules", "cinemas"
   add_foreign_key "screenings", "cinemas"
   add_foreign_key "screenings", "films"
