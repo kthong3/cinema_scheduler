@@ -1,4 +1,14 @@
-<%= render partial: "cinema", object: @cinema %>
-<% @cinema_schedules.each do |schedule| %>
-  <p><%= schedule.day %>, <%= schedule.open.strftime("%I:%M %p") %> - <%= schedule.close.strftime("%I:%M %p") %></p>
-<% end %>
+<div class="container">
+  <%= render partial: "cinema", object: @cinema %>
+  <% @cinema_schedules.each do |schedule| %>
+    <p><%= schedule.day %>, <%= schedule.open.strftime("%I:%M %p") %> - <%= schedule.close.strftime("%I:%M %p") %></p>
+  <% end %>
+  <div class="admin-feature">
+    <% if current_user && current_user.is_admin? %>
+      <p>
+        <%= link_to 'Update Cinema Information', edit_admin_cinema_path(@cinema) %>
+        | <%= link_to 'Delete Cinema', admin_cinema_path(@cinema), method: :delete, data: { confirm: "Are you sure?"} %>
+      </p>
+    <% end %>
+  </div>
+</div>
