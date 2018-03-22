@@ -36,7 +36,7 @@ class Admin::FilmsController < Admin::BaseController
   end
 
   private
-  def films_params
+  def film_params
     params.require(:film).permit(:title, :length, :release_date, :rating, :admin_id)
   end
 
